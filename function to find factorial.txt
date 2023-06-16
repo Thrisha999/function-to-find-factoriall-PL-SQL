@@ -1,0 +1,25 @@
+--Query:function to find factorial of a number
+
+--PL/SQL Block:
+create or replace
+function factorial(n int)
+return int
+is
+f int:=1;
+begin
+   for i in 1..n
+   loop
+    f = f*i;
+   end loop;
+   return f;
+end;
+/
+--output:
+
+Function created.
+
+SQL> select factorial(5) as Factorial from dual;
+
+ FACTORIAL
+----------
+       120
